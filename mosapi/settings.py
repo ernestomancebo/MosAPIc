@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file='.env',
                                       env_file_encoding='utf-8',
                                       case_sensitive=True)
+    APP_ENV: str
     # App settings
     APP_PORT: int
     APP_TRUSTED_HOSTS: List[str]
