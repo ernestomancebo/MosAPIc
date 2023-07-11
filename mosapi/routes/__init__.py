@@ -1,3 +1,3 @@
-from . import embeding
+from mosapi.routes import accounts, embeding, transactions
 
-all_routes = [embeding]
+all_routes = [embeding, accounts, transactions]

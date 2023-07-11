@@ -1,7 +1,7 @@
 from typing import List
 
 from pandas import DataFrame
-from sentence_transformer import SentenceTransformer
+from sentence_transformers import SentenceTransformer
 from transformers import TapasForQuestionAnswering, TapasTokenizer, pipeline
 
 from mosapi.settings import get_settings
@@ -12,7 +12,7 @@ class SentenceTransformerWrapper:
         settings = get_settings()
         self.model = SentenceTransformer(settings.HF_TRANSFORMER_MODEL_NAME)
 
-    def encode_df_text(self, df: Dataframe, column_name: str):
+    def encode_df_text(self, df: DataFrame, column_name: str):
         encoded_series = df[column_name].apply(
             lambda x: self.encode_text(str(x)))
         return encoded_series
